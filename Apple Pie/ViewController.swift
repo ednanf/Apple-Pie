@@ -27,6 +27,9 @@ class ViewController: UIViewController {
     
 // MARK: - IBActions
     
+    @IBAction func letterButtonPressed(_ sender: UIButton) {
+        sender.isEnabled = false
+    }
     
 // MARK: - Functions
 
