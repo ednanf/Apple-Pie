@@ -51,6 +51,7 @@ class ViewController: UIViewController {
 
     // Handles interface updates
     func updateUI() {
+        correctWordLabel.text = currentGame.formattedWord // Sets the text of the label to match the text produced by the current Game struct using the property formattedWord.
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)") // Selects the image called "Tree X" where X is the number of turns remaining.
     }
