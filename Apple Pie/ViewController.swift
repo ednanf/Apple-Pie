@@ -57,10 +57,10 @@ class ViewController: UIViewController {
         
         // Adds correct spacing for better readability.
         var letters = [String]()
-        for letter in currentGame.formattedWord {
-            letters.append(String(letter))
+        for letter in currentGame.formattedWord { // This loop appends each letter from the word presented by formattedWord to the array
+            letters.append(String(letter))        // "letters"
         }
-        let wordWithSpacing = letters.joined(separator: " ")
+        let wordWithSpacing = letters.joined(separator: " ") // Joins all elements in the array, separating them with a space.
         correctWordLabel.text = wordWithSpacing
     }
     
