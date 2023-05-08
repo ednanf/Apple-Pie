@@ -34,14 +34,18 @@ class ViewController: UIViewController {
 // MARK: - IBActions
     
     @IBAction func letterButtonPressed(_ sender: UIButton) {
-        sender.isEnabled = false
+        sender.isEnabled = false // Disables whichever button was pressed.
+        let letterString = sender.configuration!.title! // ATTENTION! I did not update letterStirng like page 377 instructed, because it crashes
+        let letter = Character(letterString.lowercased()) // Converts the value from the line above to lowercase and change the type from String to Character.
+        currentGame.playerGuessed(letter: letter) // Adds the letter contained in the button pressed to the method, in order to reduce the incorrectMovesRemaining.
+        updateUI()
     }
     
 // MARK: - Functions
 
     func newRound() {
         let newWord = listOfWords.removeFirst() // Removes **and returns** the first item.
-        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed) // Sets the game with the removed word in the line above and sets the number of turns remaning to be the same number defined in the constant.
+        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: []) // Sets the game with the removed word in the line above and sets the number of turns remaning to be the same number defined in the constant.
         updateUI()
     }
 
