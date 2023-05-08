@@ -54,6 +54,14 @@ class ViewController: UIViewController {
         correctWordLabel.text = currentGame.formattedWord // Sets the text of the label to match the text produced by the current Game struct using the property formattedWord.
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)") // Selects the image called "Tree X" where X is the number of turns remaining.
+        
+        // Adds correct spacing for better readability.
+        var letters = [String]()
+        for letter in currentGame.formattedWord {
+            letters.append(String(letter))
+        }
+        let wordWithSpacing = letters.joined(separator: " ")
+        correctWordLabel.text = wordWithSpacing
     }
     
 }
